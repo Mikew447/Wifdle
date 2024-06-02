@@ -51,7 +51,7 @@ const lastUpdatedKey = "lastUpdated";
 
 let guessCount = 0;
 const maxGuesses = 6;
-
+alert('Here are the Wiflde Rules: 6 Guesses to Guess the Daily MLW Player. Only 2024 players that are not rookies');
 function getDailyPlayer() {
     const now = new Date();
     const startOfYear = new Date(now.getFullYear(), 0, 0);
@@ -114,8 +114,9 @@ function addGuessedPlayer() {
 
     document.getElementById("player-guessed").value = "";
 
-    if (guessCount >= maxGuesses) {
+    if (guessCount >= maxGuesses||guessedPlayer.name === dailyPlayer.name) {
         alert(`The daily player was: ${dailyPlayer.name}`);
+        alert('you got the correct player in'+ guessCount +' '+'guesses');
         disableInput();
     }
 
